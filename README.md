@@ -9,8 +9,11 @@ There is no menus or panels or hotkeys by default. But there is a main menu whic
 
 ### For Blender inbuilt quick favourites
 1. Use menu search and search for text "super main".
+
 2. If the addon is installed, you will see the following
+
 annotations_supercharged.show_main_menu ▶Show Main Menu
+
 3. Right click and "Add to Quick Favourites"
 
 ### For Quickmenu, this is the configuration to add. 
@@ -20,7 +23,7 @@ annotations_supercharged.show_main_menu ▶Show Main Menu
      "menu": "VIEW_MT_annotation_supercharged_main_menu"
 },
 ```
-Note: You may need the latest version of Quickmenu which supports adding menus to the config.json
+Note: You may need the latest version of Quickmenu which supports adding menus to the config.json. Here is the Github patch details https://github.com/passivestar/quickmenu/commit/87634d793d40f39af4939bfb927d8e4c00e347fd
 
 ## Features:
 1. Hide Layers
