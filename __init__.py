@@ -499,8 +499,8 @@ class ASOperatorImportPaletteColors(bpy.types.Operator):
                         l_pal=len(pal.colors)
                         for i_gp in range(0,l_gp):
                             i_pal=i_gp%l_pal
-                            print('i_gp',i_gp, i_pal)
-                            print('color', pal.colors[i_pal].color)
+                            #print('i_gp',i_gp, i_pal)
+                            #print('color', pal.colors[i_pal].color)
                             gp.layers[i_gp].color=pal.colors[i_pal].color
                         #end for i_gp in range(0,l_gp):
                     #end if pal is not None and pal.colors is not None and len(pal.colors) > 0:
@@ -737,7 +737,7 @@ class ASStaticMenu(bpy.types.Menu, ASHelper):
     menuitems = []
 
     def draw(self, context):
-        print('ASStaticMenu')
+        #print('ASStaticMenu')
         self.drawHelper(self.menuitems)
     #end def draw(self, context):
 #end class ASStaticMenu(bpy.types.Menu, ASHelper):
@@ -749,7 +749,7 @@ class ASDynamicMenu(bpy.types.Menu):
 
     def draw(self, context):
         layout = self.layout
-        print('ASDynamicMenu %s %s' % (self.dynamicMenuData, self.dynamicMenuSubData) )
+        #print('ASDynamicMenu %s %s' % (self.dynamicMenuData, self.dynamicMenuSubData) )
         if self.dynamicMenuData == 'inactive_layers':
             #gp = bpy.context.scene.grease_pencil
 
