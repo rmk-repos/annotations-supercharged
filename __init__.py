@@ -1,7 +1,7 @@
 bl_info = {
     "name": "Annotations Supercharged",
     "author": "R.M.K",
-    "version": (1, 0, 1),
+    "version": (1, 0, 2),
     "blender": (3, 3, 0),
     "warning": "",
     "description": "Handy tools for supercharging your annotations",
@@ -14,7 +14,8 @@ import sys
 
 bpy_version=bpy.app.version
 py_version=(sys.version_info.major,sys.version_info.minor,sys.version_info.micro)
-addon_name_version=bl_info["name"] + " v" + str(bl_info["version"][0]) + "." + str(bl_info["version"][1]) + "." + str(bl_info["version"][2])
+addon_name=bl_info["name"]
+addon_name_version=addon_name + " v" + str(bl_info["version"][0]) + "." + str(bl_info["version"][1]) + "." + str(bl_info["version"][2])
 
 dynamicClasses = []
 
@@ -81,7 +82,17 @@ class ASOperatorHideAllLayers(bpy.types.Operator):
     bl_description = "Hide all layers of the active annotation"
 
     def execute(self, context):
-        gp = bpy.context.scene.grease_pencil
+        #gp = bpy.context.scene.grease_pencil
+
+        # Grease Pencil owner.
+        gpd_owner = context.annotation_data_owner
+        gpd = context.annotation_data
+
+        #print('gp',gp)
+        #print('gpd',gpd)
+        #print('ggpd_ownerp',gpd_owner)
+
+        gp=gpd
 
         if gp is not None and gp.layers is not None and len(gp.layers) > 0:
             for gpl in gp.layers:
@@ -106,7 +117,17 @@ class ASOperatorShowAllLayers(bpy.types.Operator):
     bl_description = "Show all layers of the active annotation"
 
     def execute(self, context):
-        gp = bpy.context.scene.grease_pencil
+        #gp = bpy.context.scene.grease_pencil
+
+        # Grease Pencil owner.
+        gpd_owner = context.annotation_data_owner
+        gpd = context.annotation_data
+
+        #print('gp',gp)
+        #print('gpd',gpd)
+        #print('ggpd_ownerp',gpd_owner)
+
+        gp=gpd
 
         if gp is not None and gp.layers is not None and len(gp.layers) > 0:
             for gpl in gp.layers:
@@ -131,7 +152,17 @@ class ASOperatorHideActiveLayer(bpy.types.Operator):
     bl_description = "Hide active layer of the active annotation"
 
     def execute(self, context):
-        gp = bpy.context.scene.grease_pencil
+        #gp = bpy.context.scene.grease_pencil
+
+        # Grease Pencil owner.
+        gpd_owner = context.annotation_data_owner
+        gpd = context.annotation_data
+
+        #print('gp',gp)
+        #print('gpd',gpd)
+        #print('ggpd_ownerp',gpd_owner)
+
+        gp=gpd
 
         if gp is not None and gp.layers is not None and len(gp.layers) > 0:
             gplactive=gp.layers.active
@@ -156,7 +187,17 @@ class ASOperatorShowActiveLayer(bpy.types.Operator):
     bl_description = "Show active layer of the active annotation"
 
     def execute(self, context):
-        gp = bpy.context.scene.grease_pencil
+        #gp = bpy.context.scene.grease_pencil
+
+        # Grease Pencil owner.
+        gpd_owner = context.annotation_data_owner
+        gpd = context.annotation_data
+
+        #print('gp',gp)
+        #print('gpd',gpd)
+        #print('ggpd_ownerp',gpd_owner)
+
+        gp=gpd
 
         if gp is not None and gp.layers is not None and len(gp.layers) > 0:
             gplactive=gp.layers.active
@@ -181,7 +222,17 @@ class ASOperatorHideInactiveLayers(bpy.types.Operator):
     bl_description = "Hide inactive layers of the active annotation"
 
     def execute(self, context):
-        gp = bpy.context.scene.grease_pencil
+        #gp = bpy.context.scene.grease_pencil
+
+        # Grease Pencil owner.
+        gpd_owner = context.annotation_data_owner
+        gpd = context.annotation_data
+
+        #print('gp',gp)
+        #print('gpd',gpd)
+        #print('ggpd_ownerp',gpd_owner)
+
+        gp=gpd
 
         if gp is not None and gp.layers is not None and len(gp.layers) > 0:
             gplactive=gp.layers.active
@@ -210,7 +261,17 @@ class ASOperatorShowInactiveLayers(bpy.types.Operator):
     bl_description = "Show inactive layers of the active annotation"
 
     def execute(self, context):
-        gp = bpy.context.scene.grease_pencil
+        #gp = bpy.context.scene.grease_pencil
+
+        # Grease Pencil owner.
+        gpd_owner = context.annotation_data_owner
+        gpd = context.annotation_data
+
+        #print('gp',gp)
+        #print('gpd',gpd)
+        #print('ggpd_ownerp',gpd_owner)
+
+        gp=gpd
 
         if gp is not None and gp.layers is not None and len(gp.layers) > 0:
             gplactive=gp.layers.active
@@ -244,7 +305,18 @@ class ASOperatorShowLayer(bpy.types.Operator):
     )
 
     def execute(self, context):
-        gp = bpy.context.scene.grease_pencil
+        #gp = bpy.context.scene.grease_pencil
+
+        # Grease Pencil owner.
+        gpd_owner = context.annotation_data_owner
+        gpd = context.annotation_data
+
+        #print('gp',gp)
+        #print('gpd',gpd)
+        #print('ggpd_ownerp',gpd_owner)
+
+        gp=gpd
+
         layername = self.layername
 
         if gp is not None and gp.layers is not None and len(gp.layers) > 0:
@@ -276,7 +348,18 @@ class ASOperatorHideLayer(bpy.types.Operator):
     )
 
     def execute(self, context):
-        gp = bpy.context.scene.grease_pencil
+        #gp = bpy.context.scene.grease_pencil
+
+        # Grease Pencil owner.
+        gpd_owner = context.annotation_data_owner
+        gpd = context.annotation_data
+
+        #print('gp',gp)
+        #print('gpd',gpd)
+        #print('ggpd_ownerp',gpd_owner)
+
+        gp=gpd
+
         layername = self.layername
 
         if gp is not None and gp.layers is not None and len(gp.layers) > 0:
@@ -308,7 +391,18 @@ class ASOperatorClearLayer(bpy.types.Operator):
     )
 
     def execute(self, context):
-        gp = bpy.context.scene.grease_pencil
+        #gp = bpy.context.scene.grease_pencil
+
+        # Grease Pencil owner.
+        gpd_owner = context.annotation_data_owner
+        gpd = context.annotation_data
+
+        #print('gp',gp)
+        #print('gpd',gpd)
+        #print('ggpd_ownerp',gpd_owner)
+
+        gp=gpd
+
         layername = self.layername
 
         if gp is not None and gp.layers is not None and len(gp.layers) > 0:
@@ -339,7 +433,18 @@ class ASOperatorSetActiveLayer(bpy.types.Operator):
     )
 
     def execute(self, context):
-        gp = bpy.context.scene.grease_pencil
+        #gp = bpy.context.scene.grease_pencil
+
+        # Grease Pencil owner.
+        gpd_owner = context.annotation_data_owner
+        gpd = context.annotation_data
+
+        #print('gp',gp)
+        #print('gpd',gpd)
+        #print('ggpd_ownerp',gpd_owner)
+
+        gp=gpd
+
         layername = self.layername
 
         if gp is not None and gp.layers is not None and len(gp.layers) > 0:
@@ -369,7 +474,18 @@ class ASOperatorImportPaletteColors(bpy.types.Operator):
     )
 
     def execute(self, context):
-        gp = bpy.context.scene.grease_pencil
+        #gp = bpy.context.scene.grease_pencil
+
+        # Grease Pencil owner.
+        gpd_owner = context.annotation_data_owner
+        gpd = context.annotation_data
+
+        #print('gp',gp)
+        #print('gpd',gpd)
+        #print('ggpd_ownerp',gpd_owner)
+
+        gp=gpd
+
         pals = bpy.data.palettes
 
         palettename = self.palettename
@@ -409,7 +525,17 @@ class ASOperatorClearAllLayers(bpy.types.Operator):
     bl_description = "Clear all layers of the active annotation"
 
     def execute(self, context):
-        gp = bpy.context.scene.grease_pencil
+        #gp = bpy.context.scene.grease_pencil
+
+        # Grease Pencil owner.
+        gpd_owner = context.annotation_data_owner
+        gpd = context.annotation_data
+
+        #print('gp',gp)
+        #print('gpd',gpd)
+        #print('ggpd_ownerp',gpd_owner)
+
+        gp=gpd
 
         if gp is not None and gp.layers is not None and len(gp.layers) > 0:
             for gpl in gp.layers:
@@ -433,7 +559,17 @@ class ASOperatorClearActiveLayer(bpy.types.Operator):
     bl_description = "Clear active layer of the active annotation"
 
     def execute(self, context):
-        gp = bpy.context.scene.grease_pencil
+        #gp = bpy.context.scene.grease_pencil
+
+        # Grease Pencil owner.
+        gpd_owner = context.annotation_data_owner
+        gpd = context.annotation_data
+
+        #print('gp',gp)
+        #print('gpd',gpd)
+        #print('ggpd_ownerp',gpd_owner)
+
+        gp=gpd
 
         if gp is not None and gp.layers is not None and len(gp.layers) > 0:
             gplactive=gp.layers.active
@@ -457,7 +593,17 @@ class ASOperatorClearInactiveLayers(bpy.types.Operator):
     bl_description = "Clear inactive layers of the active annotation"
 
     def execute(self, context):
-        gp = bpy.context.scene.grease_pencil
+        #gp = bpy.context.scene.grease_pencil
+
+        # Grease Pencil owner.
+        gpd_owner = context.annotation_data_owner
+        gpd = context.annotation_data
+
+        #print('gp',gp)
+        #print('gpd',gpd)
+        #print('ggpd_ownerp',gpd_owner)
+
+        gp=gpd
 
         if gp is not None and gp.layers is not None and len(gp.layers) > 0:
             gplactive=gp.layers.active
@@ -486,7 +632,17 @@ class ASOperatorClearShownLayers(bpy.types.Operator):
     bl_description = "Clear shown layers of the active annotation"
 
     def execute(self, context):
-        gp = bpy.context.scene.grease_pencil
+        #gp = bpy.context.scene.grease_pencil
+
+        # Grease Pencil owner.
+        gpd_owner = context.annotation_data_owner
+        gpd = context.annotation_data
+
+        #print('gp',gp)
+        #print('gpd',gpd)
+        #print('ggpd_ownerp',gpd_owner)
+
+        gp=gpd
 
         if gp is not None and gp.layers is not None and len(gp.layers) > 0:
             for gpl in gp.layers:
@@ -512,7 +668,17 @@ class ASOperatorClearHiddenLayers(bpy.types.Operator):
     bl_description = "Clear hidden layers of the active annotation"
 
     def execute(self, context):
-        gp = bpy.context.scene.grease_pencil
+        #gp = bpy.context.scene.grease_pencil
+
+        # Grease Pencil owner.
+        gpd_owner = context.annotation_data_owner
+        gpd = context.annotation_data
+
+        #print('gp',gp)
+        #print('gpd',gpd)
+        #print('ggpd_ownerp',gpd_owner)
+
+        gp=gpd
 
         if gp is not None and gp.layers is not None and len(gp.layers) > 0:
             for gpl in gp.layers:
@@ -555,7 +721,8 @@ class ASOperatorShowInbuiltAnnotationLayerPanel(bpy.types.Operator):
     def execute(self, context):
         print('ASOperatorShowInbuiltAnnotationLayerPanel')
         #bpy.ops.wm.call_panel(name="NODE_PT_annotation", keep_open=True)
-        bpy.ops.wm.call_panel(name="TOPBAR_PT_annotation_layers", keep_open=True)
+        #bpy.ops.wm.call_panel(name="TOPBAR_PT_annotation_layers", keep_open=True)
+        bpy.ops.wm.call_panel(name="VIEW3D_PT_grease_pencil", keep_open=True)
 
         return {'FINISHED'}
     #end def execute(self, context):
@@ -584,7 +751,17 @@ class ASDynamicMenu(bpy.types.Menu):
         layout = self.layout
         print('ASDynamicMenu %s %s' % (self.dynamicMenuData, self.dynamicMenuSubData) )
         if self.dynamicMenuData == 'inactive_layers':
-            gp = bpy.context.scene.grease_pencil
+            #gp = bpy.context.scene.grease_pencil
+
+            # Grease Pencil owner.
+            gpd_owner = context.annotation_data_owner
+            gpd = context.annotation_data
+
+            #print('gp',gp)
+            #print('gpd',gpd)
+            #print('ggpd_ownerp',gpd_owner)
+
+            gp=gpd
 
             i_l=1
             bHasItems=False
@@ -606,7 +783,17 @@ class ASDynamicMenu(bpy.types.Menu):
             if not bHasItems: layout.label(text='--- None ---')
 
         elif self.dynamicMenuData == 'hidden_layers':
-            gp = bpy.context.scene.grease_pencil
+            #gp = bpy.context.scene.grease_pencil
+
+            # Grease Pencil owner.
+            gpd_owner = context.annotation_data_owner
+            gpd = context.annotation_data
+
+            #print('gp',gp)
+            #print('gpd',gpd)
+            #print('ggpd_ownerp',gpd_owner)
+
+            gp=gpd
 
             i_l=1
             bHasItems=False
@@ -626,7 +813,17 @@ class ASDynamicMenu(bpy.types.Menu):
             if not bHasItems: layout.label(text='--- None ---')
 
         elif self.dynamicMenuData == 'all_layers':
-            gp = bpy.context.scene.grease_pencil
+            #gp = bpy.context.scene.grease_pencil
+
+            # Grease Pencil owner.
+            gpd_owner = context.annotation_data_owner
+            gpd = context.annotation_data
+
+            #print('gp',gp)
+            #print('gpd',gpd)
+            #print('ggpd_ownerp',gpd_owner)
+
+            gp=gpd
 
             i_l=1
             bHasItems=False
@@ -643,7 +840,17 @@ class ASDynamicMenu(bpy.types.Menu):
             if not bHasItems: layout.label(text='--- None ---')
 
         elif self.dynamicMenuData == 'shown_layers':
-            gp = bpy.context.scene.grease_pencil
+            #gp = bpy.context.scene.grease_pencil
+
+            # Grease Pencil owner.
+            gpd_owner = context.annotation_data_owner
+            gpd = context.annotation_data
+
+            #print('gp',gp)
+            #print('gpd',gpd)
+            #print('ggpd_ownerp',gpd_owner)
+
+            gp=gpd
 
             i_l=1
             bHasItems=False
@@ -685,12 +892,17 @@ class ASDynamicMenu(bpy.types.Menu):
 ############################################################################################################################################
 
 class ASMainMenu(bpy.types.Menu, ASHelper):
-    bl_label = "%s Main Menu" % (addon_name_version)
+    #bl_label = "%s Main Menu" % (addon_name_version)
+    bl_label = "%s Main Menu" % (addon_name)
     bl_idname = "VIEW_MT_annotation_supercharged_main_menu"
-    bl_description = "Main Menu for %s Addon" % (addon_name_version)
+    bl_description = "Main Menu for %s Addon" % (addon_name)
 
     def draw(self, context):
         self.drawHelper(config)
+    #end def draw(self, context):
+
+    def menu_draw(self, context):
+        self.layout.menu(ASMainMenu.bl_idname, text=addon_name)
     #end def draw(self, context):
 
 #end class ASMainMenu(bpy.types.Menu):
@@ -964,9 +1176,18 @@ def register():
         bpy.utils.register_class(dyncls)
     #end for dyncls in reversed(dynamicClasses):
 
+    bpy.types.IMAGE_MT_editor_menus.append(ASMainMenu.menu_draw)
+    bpy.types.NODE_MT_editor_menus.append(ASMainMenu.menu_draw)
+    bpy.types.VIEW3D_MT_editor_menus.append(ASMainMenu.menu_draw)
+    bpy.types.SEQUENCER_MT_editor_menus.append(ASMainMenu.menu_draw)    
 #end def register():
 
 def unregister():
+    bpy.types.SEQUENCER_MT_editor_menus.remove(ASMainMenu.menu_draw)    
+    bpy.types.VIEW3D_MT_editor_menus.remove(ASMainMenu.menu_draw)
+    bpy.types.NODE_MT_editor_menus.remove(ASMainMenu.menu_draw)
+    bpy.types.IMAGE_MT_editor_menus.remove(ASMainMenu.menu_draw)
+
     for dyncls in reversed(dynamicClasses):
         print(addon_name_version + ": Unregistering %s" % (dyncls))
         bpy.utils.unregister_class(dyncls)
