@@ -14,4 +14,14 @@ For Quickmenu, this is the option
 },
 ```
 
+
+## Features:
+1. Hide Layers
+2. Show Layers
+3. Clear Layers
+4. Set Active Layers
+5. Import color from Color Palette to the layers
+
+
+
 This is my first addon and my first exploration in Python. So please expect the unexpected. :)
