@@ -386,9 +386,12 @@ class ASOperatorImportPaletteColors(bpy.types.Operator):
                             print('i_gp',i_gp, i_pal)
                             print('color', pal.colors[i_pal].color)
                             gp.layers[i_gp].color=pal.colors[i_pal].color
-
+                        #end for i_gp in range(0,l_gp):
+                    #end if pal is not None and pal.colors is not None and len(pal.colors) > 0:
+                #end if palettename in pals:
             else:
                 self.report({'INFO'}, "No palette to import colors!")
+            #end if pals is not None and len(pals) > 0:
         else:
             self.report({'INFO'}, "No annotations or layer to import colors!")
         #end if gp is not None and gp.layers is not None and len(gp.layers) > 0:
@@ -927,6 +930,11 @@ def get_dynamic_class(config):
                 if hasattr(classref, 'menuitems'):
                     #print('classref.menuitems',classref.menuitems, classref.menuitems)
                     get_dynamic_class(classref.menuitems)
+                #end if hasattr(classref, 'menuitems'):
+            #end if classref not in CLS_OPERATORS and classref not in CLS_MENUS:
+        #end if hasattr(itm, 'classref'):
+    #end for itm in config:
+#end def get_dynamic_class(config):
 
 def register():
     for cls in CLS_COMMONS:
