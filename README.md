@@ -14,7 +14,7 @@ Blender version: 3.3.0
 5. Import color from Color Palette to the layers
 
 
-It adds itself to the headers of the relevant spaces where annotations are available (3D view, Node editors, Imaged editor, Sequence editor). Also there is a main menu which can be used either with Blender inbuild Quick Favourites or with other addons like https://github.com/passivestar/quickmenu
+It adds itself to the headers of the relevant spaces where annotations are available (3D view, Node editors, Image editor, Sequence editor). Also there is a main menu which can be used either with Blender inbuild Quick Favourites or with other addons like https://github.com/passivestar/quickmenu
 
 ### For Blender inbuilt quick favourites
 1. Use menu search and search for text "super main".
