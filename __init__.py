@@ -31,11 +31,6 @@ class Dict2Class(object):
 
     def dump(self, prefix=''):
         print('%sself: %s' % (prefix,self))
-        if hasattr(self, 'type'): print('%s    type: %s' % (prefix,self.type))
-        if hasattr(self, 'operator'): print('%s    operator: %s' % (prefix,self.operator))
-        if hasattr(self, 'menu'): print('%s    menu: %s' % (prefix,self.menu))
-        if hasattr(self, 'separator'): print('%s    separator: %s' % (prefix,self.separator))
-        if hasattr(self, 'text'): print('%s    text: %s' % (prefix,self.text))
 
 ############################################################################################################################################
 
